@@ -1,0 +1,43 @@
+.clear{
+  clear: both;
+  overflow: hidden;
+}
+.list{
+  margin-top:5px;
+}
+ 
+.list .list_item{
+  margin-top:2px;
+  padding:10px;
+  height:50px;
+  border-bottom:1px solid #E8E8E8;
+}
+.list .list_item .img{
+  float:left;
+  width:25%;
+  height:100%;
+}
+.list .list_item .img image{
+   width:100%;
+   height:100%;
+}
+ 
+.list .list_item .info{
+  width:75%;
+  float:left;
+  height:50px;
+  position:relative;
+  margin-bottom: 17px;
+}
+.list .list_item .info .name{
+  color:#333;
+  margin-left:5px;
+  font-size: 15px;
+}
+ 
+.list .list_item .info .work{
+  color: 	#b87803;
+  margin-left:5px;
+  margin-top:10px;
+  font-size:12px;
+}

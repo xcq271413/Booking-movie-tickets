@@ -1,0 +1,39 @@
+{
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#ef4868",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "pages/icon/movie.png",
+        "iconPath": "pages/icon/movie.png",
+        "pagePath": "pages/movie/movie",
+        "text": "电影"
+      },
+      {
+        "selectedIconPath": "pages/icon/my.png",
+        "iconPath": "pages/icon/my.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "pages": [
+    "pages/movie/movie",
+    "pages/index/index",
+    "pages/book/index",
+    "pages/logs/logs",
+    "pages/pay/pay",
+    "pages/my/my",
+    "pages/order/order",
+    "pages/about_us/about_us"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "电影票预定",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

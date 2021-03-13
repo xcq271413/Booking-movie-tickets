@@ -1,0 +1,19 @@
+<view class='list'>
+  <block   wx:for='{{dataList}}' wx:key='list' wx:for-item="item">
+  <view   class="list_item">
+      <navigator  url='{{item.goods_id}}' bindtap="navigateToPage"  data-name='{{item.goods_title}}' id='{{item.goods_id}}' data-showType='{{item.showType}}'>
+      <view class='img'>
+        <image src="{{item.goods_img}}"  mode="scaleToFill"/>
+      </view>
+      <view  class='info'>
+        <view class='title'>{{item.goods_title}}</view>
+        <view class='score'>评分：{{item.goods_score}}</view>
+        <view class='actor'>导演：{{item.goods_director}}</view>
+        <view class="actor">主演：{{item.goods_actor}}</view>
+        <view class="price">价格：￥{{item.goods_price}}</view>
+      </view>
+       </navigator>
+      <view class='clear'></view>
+  </view>
+  </block>
+</view>

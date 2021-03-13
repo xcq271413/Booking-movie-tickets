@@ -1,0 +1,49 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/* flex column*/
+ 
+.common-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+ 
+/* flex row*/
+ 
+.common-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+ 
+/* flex 填充布局*/
+ 
+.common-fill {
+  flex: 1;
+  display: flex;
+}
+ 
+/** 宽高100%**/
+ 
+.common-wh100 {
+  height: 100%;
+  width: 100%;
+}
+ 
+/**宽 **/
+ 
+.common-vw100 {
+  width: 100%;
+}
+ 
+/**高 **/
+ 
+.common-vh100 {
+  height: 100%;
+}

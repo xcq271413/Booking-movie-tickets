@@ -1,0 +1,14 @@
+<view class='list'>
+  <block   wx:for='{{dataList}}' wx:key='list' wx:for-item="item">
+  <view   class="list_item">
+      <view class='img'>
+        <image src="{{item.us_img}}"  mode="aspectFit"/>
+      </view>
+      <view  class='info'>
+        <view class='name'>{{item.us_name}}</view>
+        <view class='work'>任务：{{item.us_work}}</view>
+      </view>
+      <view class='clear'></view>
+  </view>
+  </block>
+</view>

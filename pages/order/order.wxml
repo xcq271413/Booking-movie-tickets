@@ -1,0 +1,24 @@
+<!-- 切换栏 -->
+<view class="swiper-tab">
+<text color='white'>我的订单</text>
+</view>
+ 
+
+      <block  wx:for='{{orderList}}' wx:key='list' wx:for-item="item">
+      <view   class="list_item">
+        <view class="orderListTitle">
+          <text class="userHall">{{item.hall}}</text>
+          <text class="orderStatus">{{item.state}}</text>
+        </view>
+        <view class="orderListDetails">
+          <text class="userName">{{item.name}}</text>
+          <view class="productTime">电影场次: {{item.time}}</view>
+          <text class="productStatus">座位：{{item.status}}</text>
+        </view>
+        <view class="productCount">
+          <view>
+            <text>合计：￥{{item.money}}</text>
+          </view>
+        </view> </view>
+    </block>
+    

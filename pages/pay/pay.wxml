@@ -1,0 +1,13 @@
+<!--pages/pay/pay.wxml-->
+<view class="result_contain">
+  <view class="result_img">
+    <icon type="success" size="72"></icon>
+  </view>
+  <view class="result_content">{{resultContent}}</view>
+  <navigator url="../order/order" hover-class="none">
+    <text class="result_to_order" >查看订单</text>
+  </navigator>
+  <navigator url="../book/index" hover-class="none">
+    <text class="result_to_order" >返回上一页</text>
+  </navigator>
+</view>

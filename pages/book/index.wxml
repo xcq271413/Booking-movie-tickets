@@ -1,0 +1,155 @@
+<wxs module="itema">
+  var getTypeByStatus = function(obj) {
+    switch (obj.status) {
+      case 0:
+        return 'mine'
+        break;
+      case 1:
+        return 'reservation'
+        break;
+      case 2:
+        return 'soldout'
+        break;
+
+    }
+
+  }
+  module.exports.getTypeByStatus = getTypeByStatus;
+</wxs>
+
+<!--选择时间-->
+<scroll-view scroll-x class='date ' scroll-left='{{dateScrollX}}'>
+  <view class='common-flex-row data-margin'>
+    <view class='common-flex-row' id='{{index}}' bindtap='chooseDate' wx:for='{{date}}' wx:for-index="index" wx:key='item'>
+      <view class="common-flex-column {{datePosition==index?'time-select':'time-unselect'}}">
+        <text>{{item.title}}</text>
+        <text>{{item.subTitle}}</text>
+      </view>
+      <view class='w16rpx' />
+    </view>
+
+  </view>
+
+</scroll-view>
+<!--选择时间-->
+
+
+<!--选择场次-->
+<scroll-view scroll-x>
+  <view class='common-flex-row session'>
+    <view class='common-flex-row' wx:for='{{session}}' wx:for-index="index" wx:key='item'>
+      <text class="{{sessionPosition==index?'session-select':'session-unselect'}}" bindtap='chooseSession' id='{{index}}'>{{item.name}}</text>
+      <view class='w80rpx' />
+    </view>
+  </view>
+</scroll-view>
+
+
+<!--选择场次-->
+<!--中间-->
+ 
+  <view class='item'>
+    <view class='mask' />
+    <!--左边时间-->
+    <movable-area class='movable-area-left' style='height:{{currentH + blockH+10}}px;'>
+      <movable-view animation='' y="{{top}}" direction="vertical" out-of-bounds class='movable-view-left' disabled='false' style='height:{{offsetH+100+blockH/2}}px;'>
+        <view style='margin:{{offsetTop}}px 0px 0px 0px; '>
+          <view class='h29rpx' />
+          <text class='left' wx:for='{{time}}' wx:key='i'>{{item}}-</text>
+        </view>
+      </movable-view>
+    </movable-area>
+    <!--左边时间-->
+    <!--右边块-->
+    <view class='item-right' style='height:{{currentH + blockH}}px; '>
+      <!--上-->
+      <movable-area class='movable-area-top' style='width:{{currentW}}px;'>
+
+        <movable-view animation='' direction="horizontal" out-of-bounds class='movable-view-top' x="{{left}}" disabled='false' style='width: {{offsetW+1000+blockW/2}}px;'>
+          <view style='margin-left:{{offsetLeft}}px;' class='item-right-top'>
+            <view class='common-flex-row' wx:key='j' wx:for='{{area}}'>
+              <text class='top'>{{item}}</text>
+              <view class='w2rpx' />
+            </view>
+          </view>
+
+        </movable-view>
+      </movable-area>
+      <!--上-->
+      <!--下-->
+      <view class='h2rpx' />
+
+      <movable-area class='movable-area-content' style='height:{{currentH}}px;width:{{currentW}}px;'>
+        <movable-view direction="all" out-of-bounds bindchange='bindChange' class='movable-view-content' style='width:{{offsetW }}px;height:{{offsetH}}px' x="{{contentX}}" y="{{contentY}}">
+          <view class='common-flex-row' wx:key='m' wx:for='{{obj}}' wx:for-index='i'>
+            <block wx:key='n' wx:for='{{obj[i]}}' wx:for-index='j'>
+
+
+              <text class='content {{itema.getTypeByStatus(item)}}' wx:if='{{item.status==2}}' bindtap='choose' id='{{i}},{{j}}'></text>
+
+              <view class='lock-big' wx:elif='{{item.status==5}}' bindtap='choose' id='{{i}},{{j}}'>
+                <image src='/img/lock_big.png' class='lock-img-big'></image>
+              </view>
+              <text bindtap='choose' id='{{i}},{{j}}' class='content {{itema.getTypeByStatus(item)}}' wx:else>
+                ￥{{item.price}} 
+               
+              </text>
+
+
+            </block>
+
+          </view>
+
+        </movable-view>
+
+      </movable-area>
+      <!--下-->
+    </view>
+    <!--右边块-->
+  </view>
+  <view class='common-flex-row middle-item-tip'>
+
+    <view class='common-flex-row middle-item-tip-center'>
+      <view class='reservation middle-item-tip-img' />
+      <text class='item-text'>可预订</text>
+    </view>
+
+    <view class='common-flex-row middle-item-tip-center'>
+      <view class='soldout middle-item-tip-img' />
+      <text class='item-text'>已售</text>
+    </view>
+  
+
+    <view class='common-flex-row middle-item-tip-center'>
+      <view class='mine middle-item-tip-img' />
+      <text class='item-text'>我的预订</text>
+    </view>
+
+
+  </view>
+ 
+
+<!--中间-->
+<!-- 选择提醒-->
+<text class='tip' wx:if='{{list.length==0}}'>最多可预订{{maxFieldLen}}张票，请尽量保持座位连续</text>
+<!-- 选择提醒-->
+<!-- 选择列表-->
+<scroll-view scroll-x>
+  <view class='common-flex-row l40rpx'>
+    <view class='common-flex-row' wx:for='{{list}}' wx:key='{{item}}'>
+      <view class='common-flex-column list-item'>
+        <text>{{item.time}}</text>
+        <text>{{item.area}}</text>
+      </view>
+      <view class='w24rpx' />
+
+    </view>
+  </view>
+</scroll-view>
+<!-- 选择列表-->
+<!-- 提交订单-->
+<view bindtap="bindViewTap" class='common-flex-column center'>
+  <text class='confirm' bindtap='confirm'>{{submitTitle}}</text>
+  <view class='h24rpx' />
+</view>
+<!-- 提交订单-->

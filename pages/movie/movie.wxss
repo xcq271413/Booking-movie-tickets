@@ -1,0 +1,60 @@
+.clear{
+  clear: both;
+  overflow: hidden;
+}
+navigator{
+  display:inline;
+}
+.list{
+  margin-top:5px;
+}
+ 
+.list .list_item{
+  margin-top:5px;
+  padding:10px;
+  height:120px;
+  border-bottom:1px solid #E8E8E8;
+}
+.list .list_item .img{
+  float:left;
+  width:30%;
+  height:100%;
+}
+.list .list_item .img image{
+   width:80%;
+   height:100%;
+   margin-left: 5px;
+}
+ 
+.list .list_item .info{
+  width:65%;
+  float:left;
+  height:100px;
+  position:relative;
+  margin-bottom: 17px;
+}
+.list .list_item .info .title{
+  color:#333;
+  margin-left:5px;
+  font-size: 15px;
+}
+ 
+.list .list_item .info .score{
+  color: 	#FF8C00;
+  margin-left:5px;
+  margin-top:10px;
+  font-size:10px;
+}
+ 
+.list .list_item .info .actor{
+  color:#747474;
+  margin-left:5px;
+  margin-top: 10px;
+  font-size:10px;
+}
+.list .list_item .info .price{
+  color:#d62b72;
+  margin-left:5px;
+  margin-top: 10px;
+  font-size:10px;
+}
